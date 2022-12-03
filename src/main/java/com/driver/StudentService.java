@@ -26,17 +26,17 @@ public class StudentService {
     {
         return studentRepository.findStudent(studentname);
     }
-    public Student getTeacherByName(String Teachername)
+    public Teacher getTeacherByName(String Teachername)
     {
         return studentRepository.findTeacher(Teachername);
     }
     public List<String> getStudentsByTeacherName(String teacher)
     {
-        return studentRepository.getStudentsByTeacherName(teacher)
+        return studentRepository.getStudentsByTeacherName(teacher);
     }
     public List<String> getAllStudents()
     {
-        return studentRepository.findAllStudent();
+        return studentRepository.findAllStudents();
     }
     public void deleteTeacherByName(String teacher)
     {
@@ -44,7 +44,8 @@ public class StudentService {
     }
     public void deleteAllTeachers()
     {
-        studentRepository.deleteAllTeachers();
+        String teacher = null;
+        studentRepository.deleteAllTeacher(teacher);
     }
 
 
