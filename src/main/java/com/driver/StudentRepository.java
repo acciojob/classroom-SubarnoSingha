@@ -48,7 +48,7 @@ public class StudentRepository {
     {
         return teacherHashMap.get(teacher);
     }
-    public List<String> getStudentsByTeacherName(String teacher){
+    public List<String> getStudentsByTeacher(String teacher){
         List<String> allStudent = new ArrayList<String>();
         if(teacherStudentMap.containsKey(teacher))
             allStudent= teacherStudentMap.get(teacher);
@@ -74,11 +74,11 @@ public class StudentRepository {
             teacherHashMap.remove(teacher);
         }
     }
-    public void deleteAllTeacher(String teacher){
+    public void deleteAllTeacher(){
         HashSet<String> set = new HashSet<String>();
 
         for(String teachers: teacherStudentMap.keySet()){
-            for(String student: teacherStudentMap.get(teacher)){
+            for(String student: teacherStudentMap.get(teachers)){
                 set.add(student);
             }
         }
